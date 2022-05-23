@@ -10,10 +10,16 @@ import {
 describe('ECDH test', () => {
   let eddsa: EdDSA;
   beforeAll(async () => {
+    jest.setTimeout(60000);
     eddsa = await buildEddsaModule();
   }, 15000);
 
+  afterAll(done => {
+    done();
+  })
+  
   it('should encrypt/decrypt text', async () => {
+    jest.setTimeout(60000);
     const { privKey: bobPrivKey, pubKey: bobPubKey } = genKeypair(eddsa);
     const { privKey: alicePrivKey, pubKey: alicePubKey } = genKeypair(eddsa);
     const ecdhSharedKey = await genEcdhSharedKey({
@@ -41,6 +47,8 @@ describe('ECDH test', () => {
   });
 
   it('should fail if decrypted with incorrect public key', async () => {
+    jest.setTimeout(60000);
+
     const { privKey: bobPrivKey, pubKey: bobPubKey } = genKeypair(eddsa);
     const { privKey: alicePrivKey } = genKeypair(eddsa);
 

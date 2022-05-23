@@ -1,0 +1,13 @@
+{
+    "pubGuessA": "3", 
+    "pubGuessB": "2", 
+    "pubGuessC": "1", 
+    "pubNumFermi": "1", 
+    "pubNumPico": "1", 
+    "pubSolnHash": "9489417929561662627532726489375865289049230351638614629981110959533573370753",
+
+    "privSolnA":"1",
+    "privSolnB":"2",
+    "privSolnC":"4",
+    "privSalt":""
+}
